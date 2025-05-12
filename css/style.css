@@ -16,11 +16,24 @@
 }
 .col {
     width: calc(100% / 4);
-    border: 1px solid rgb(255, 253, 253);
-    height: 70px;
-    margin: 30px;
-    background-color: rgb(251, 244, 244);
+  border: 1px solid rgb(255, 253, 253);
+         margin: 30px;    
+         background-color: rgb(251, 244, 244);
     align-items: center;
+}
+.card {
+        position: relative;
+    border: 1px solid rgb(255, 253, 253);
+         margin: 30px;    
+         background-color: rgb(251, 244, 244);
+}
+.card-img {
+    max-width: 100%;
+    height: auto;
+}
+.pin {
+    position: absolute;
+    left: 60px;
 }
 h1 {
    padding: 30px 0px;
