@@ -12,3 +12,24 @@
 // ** Milestone 3 **
 //     Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, 
 // sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
+
+
+const cardContainer = document.querySelector(".card-container");
+
+axios
+.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
+    let cards = "";
+    const pictures = resp.data;
+    pictures.forEach(singlePic => {
+        const {url} = singlePic;
+        cards +=  `<div class="col">
+                   <div class="card">
+                    <img src="./img/pin.svg" alt="" class="pin">
+                    <img src="${url}";
+                        alt="immagini estate 2024" class="card-img">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                    </div> </div>`
+    });
+ cardContainer.innerHTML = cards;
+                   
+});
