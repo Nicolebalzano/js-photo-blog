@@ -53,3 +53,27 @@ main {
     background-image: url("../img/cork.png");
         height: 100vh;
 }
+ @media screen and (max-width : 1024px) {
+    .col {
+        width: calc(100% / 3);
+    }
+    main {
+    background-image: url("../img/cork.png");
+        height: 100vh;
+}
+.pin {
+    left: 120px;
+}
+  }
+  @media screen and (max-width : 880px) {
+    .col {
+        width: calc(100% / 2);
+    }
+    main {
+    background-image: url("../img/cork.png");
+        height: 100%;
+}
+.pin {
+    left: 130px;
+}
+  }
