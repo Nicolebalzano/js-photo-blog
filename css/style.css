@@ -67,6 +67,18 @@ h1 {
     background: rgba(0, 0, 0, 0.5); 
     z-index: 9999;
 }
+.overlay-img {
+padding: 30px;
+}
+.container-small {
+    width: 50%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 30%;
+    margin-top: 30px;
+}
+
+
 
 /* MEDIA QUERY */
  @media screen and (max-width : 1024px) {
@@ -76,6 +88,16 @@ h1 {
 .pin {
     left: 120px;
 }
+.overlay-img {
+padding: 0px;
+}
+.container-small {
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 15%;
+    margin-top: 100px;
+}
   }
   @media screen and (max-width : 880px) {
     .col {
@@ -84,5 +106,15 @@ h1 {
 
 .pin {
     left: 130px;
+}
+.overlay-img {
+padding: 0px;
+}
+.container-small {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 10%;
+    margin-top: 100px;
 }
   }
