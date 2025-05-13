@@ -21,6 +21,10 @@
 
 
 const cardContainer = document.querySelector(".card-container");
+ const overlayElem = document.querySelector("div.overlay");
+const buttonElem = document.querySelector(".close");
+
+ 
 
 axios
 .get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
@@ -37,5 +41,8 @@ axios
                     </div> </div>`
     });
  cardContainer.innerHTML = cards;
-                   
+cardContainer.addEventListener("click", function(){
+    
+})
 });
+

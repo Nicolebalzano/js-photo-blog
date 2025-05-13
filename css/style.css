@@ -20,10 +20,6 @@ h1 {
     font-family: Edu Tas Beginner , sans-serif;
 }
 
-
-
-
-
 .container {
     width : 80%;
     margin: 0 auto;
@@ -43,6 +39,7 @@ h1 {
     align-items: center;
 }
 .card {
+    position: relative;
     border: 1px solid rgb(255, 253, 253);
          margin: 15px;    
          background-color: rgb(251, 244, 244);
@@ -53,68 +50,106 @@ h1 {
 }
 .pin {
     position: absolute;
-    left: 90px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .header {
     background-image: url("../img/wall.png");
     text-align: center;
 }
+/* OVERLAY */
 .overlay {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(13, 13, 13, 0.705); 
     z-index: 9999;
+    display: none;
 }
 .overlay-img {
-padding: 30px;
+    padding: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .container-small {
-    width: 50%;
+    width: 60%;
     max-width: 800px;
     margin: 0 auto;
-    margin-left: 30%;
+}
+.btn {
+    position: relative;
     margin-top: 30px;
 }
-
+.close {
+    position: absolute;
+    top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+font-size: 1.3rem;
+padding: 5px;
+}
 
 
 /* MEDIA QUERY */
+ @media screen and (max-width : 1600px) {
+    .col {
+        width: calc(100% / 4);
+    }
+
+.overlay-img {
+ padding: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+  }
  @media screen and (max-width : 1024px) {
     .col {
         width: calc(100% / 3);
     }
-.pin {
-    left: 120px;
-}
+
 .overlay-img {
-padding: 0px;
+ padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
-.container-small {
-    width: 70%;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-left: 15%;
-    margin-top: 100px;
+
+  }
+   @media screen and (max-width : 970px) {
+    .col {
+        width: calc(100% / 3);
+    }
+
+.overlay-img {
+ padding: 65px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
+
   }
   @media screen and (max-width : 880px) {
     .col {
         width: calc(100% / 2);
     }
 
-.pin {
-    left: 130px;
-}
+
 .overlay-img {
-padding: 0px;
+    padding: 30px;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.container-small {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-left: 10%;
-    margin-top: 100px;
-}
+
   }
