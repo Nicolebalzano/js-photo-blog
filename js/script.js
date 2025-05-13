@@ -21,28 +21,41 @@
 
 
 const cardContainer = document.querySelector(".card-container");
- const overlayElem = document.querySelector("div.overlay");
-const buttonElem = document.querySelector(".close");
+const overlayElem = document.querySelector("div.overlay");
 
- 
+
 
 axios
-.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
-    let cards = "";
-    const pictures = resp.data;
-    pictures.forEach(singlePic => {
-        const {url} = singlePic;
-        cards +=  `<div class="col">
+    .get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
+        let cards = "";
+        const pictures = resp.data;
+        pictures.forEach(singlePic => {
+            const { url } = singlePic;
+            cards += `<div class="col">
                    <div class="card">
                     <img src="./img/pin.svg" alt="" class="pin">
-                    <img src="${url}";
+                    <img src="${url}"
                         alt="immagini estate 2024" class="card-img">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
                     </div> </div>`
-    });
- cardContainer.innerHTML = cards;
-cardContainer.addEventListener("click", function(singlePic){
-overlayElem.style.display = "block";
-})
-});
+        });
+        cardContainer.innerHTML = cards;
+    //  aggiungo l'evento che mostra l'overlay al click specifico sull'immagine della card
+        cardContainer.addEventListener("click", function(event) {
+            if(event.target.classList.contains("card-img")){
+                overlayElem.style.display = "block";
+                overlayElem.innerHTML = `
+                <button class="close">Chiudi</button></div><img
+            src="${event.target.src}" alt="" class="overlay-img container-small">
+                `;
+                const buttonElem = document.querySelector(".close");
+              buttonElem.addEventListener("click", function(){
+                    overlayElem.style.display = "none";
+                })
+            }
+
+
+        })
+       
+       });
 
