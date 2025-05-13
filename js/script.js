@@ -41,8 +41,8 @@ axios
                     </div> </div>`
     });
  cardContainer.innerHTML = cards;
-cardContainer.addEventListener("click", function(){
-    
+cardContainer.addEventListener("click", function(singlePic){
+overlayElem.style.display = "block";
 })
 });
 
