@@ -18,7 +18,7 @@
 // il tutto in manierà fluida. 
 // Inoltre il mouse diventa un puntatore, per far capire all’utente che può cliccare
 
-
+//////////////////////////////PRELEVO ELEMENTI PRINCIPALI //////////////////////////////
 
 const cardContainer = document.querySelector(".card-container");
 const overlayElem = document.querySelector("div.overlay");
@@ -48,12 +48,12 @@ axios
         colElem.forEach(curCol => {
             curCol.addEventListener("mouseover", function(){
   curCol.style.cursor = "grab";
-  curCol.style.transform = "rotate(8deg)";
+  curCol.style.transform = "rotate(8deg) scale(1.1)";
   curCol.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
   pinElem.style.display = "none";
         });
         curCol.addEventListener("mouseout", function(){
-curCol.style.transform = "rotate(0deg)";
+curCol.style.transform = "rotate(0deg) scale(1.0)";
   curCol.style.boxShadow = "none";
 pinElem.style.display = "block";
         });
@@ -63,7 +63,7 @@ pinElem.style.display = "block";
 
 
 
-
+//////////////////////////////// OVERLAY////////////////////////////////////////////////////////////////////
         //  aggiungo l'evento che mostra l'overlay al click specifico sull'immagine della card
         cardContainer.addEventListener("click", function (event) {
             if (event.target.classList.contains("card-img")) {
