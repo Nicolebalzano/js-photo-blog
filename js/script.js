@@ -47,7 +47,7 @@ axios
 
         colElem.forEach(curCol => {
             curCol.addEventListener("mouseover", function(){
-  curCol.style.cursor = "grab";
+  curCol.style.cursor = "pointer";
   curCol.style.transform = "rotate(8deg) scale(1.1)";
   curCol.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
   pinElem.style.display = "none";
