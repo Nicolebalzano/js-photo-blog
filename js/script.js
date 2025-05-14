@@ -40,36 +40,40 @@ axios
                     </div> </div>`
         });
         cardContainer.innerHTML = cards;
+        // funzione per effetti all'hover in & out del mouse
+        mouseEffects();
+         overlay();
+    });
 
-        
-          const colElem = document.querySelectorAll(".col");
-          
 
-        colElem.forEach(curCol => {
-            curCol.addEventListener("mouseover", function(){
-  curCol.style.cursor = "pointer";
-  curCol.style.transform = "rotate(8deg) scale(1.1)";
-  curCol.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
-  const pin = curCol.querySelector(".pin");
-  if(pin){
-    pin.style.display = "none";
-  }
+
+//////////////////// FUNZIONI///////////////////
+function mouseEffects() {
+    const colElem = document.querySelectorAll(".col");
+    colElem.forEach(curCol => {
+        curCol.addEventListener("mouseover", function () {
+            curCol.style.cursor = "pointer";
+            curCol.style.transform = "rotate(8deg) scale(1.1)";
+            curCol.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
+            const pin = curCol.querySelector(".pin");
+            if (pin) {
+                pin.style.display = "none";
+            }
         });
-        curCol.addEventListener("mouseout", function(){
-curCol.style.transform = "rotate(0deg) scale(1.0)";
-  curCol.style.boxShadow = "none";
- const pin = curCol.querySelector(".pin");
-  if(pin){
-    pin.style.display = "block";
-  }
+        curCol.addEventListener("mouseout", function () {
+            curCol.style.transform = "rotate(0deg) scale(1.0)";
+            curCol.style.boxShadow = "none";
+            const pin = curCol.querySelector(".pin");
+            if (pin) {
+                pin.style.display = "block";
+            }
         });
 
-})
-        
+    })
+}
 
-
-
-//////////////////////////////// OVERLAY////////////////////////////////////////////////////////////////////
+function overlay() {
+     //////////////////////////////// OVERLAY////////////////////////////////////////////////////////////////////
         //  aggiungo l'evento che mostra l'overlay al click specifico sull'immagine della card
         cardContainer.addEventListener("click", function (event) {
             if (event.target.classList.contains("card-img")) {
@@ -85,7 +89,4 @@ curCol.style.transform = "rotate(0deg) scale(1.0)";
             }
 
         })
-
-
-
-    });
+}

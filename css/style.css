@@ -68,7 +68,7 @@ height: auto;
     display: none;
 }
 .overlay-img {
-    padding: 90px;
+    padding: 70px;
     display: block;
     margin: auto;
 }
@@ -103,7 +103,7 @@ padding: 7px;
     }
 
 .overlay-img {
- padding: 50px;
+ padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -123,5 +123,10 @@ padding: 7px;
     .col {
         width: calc(100% / 2);
     }
+    .overlay-img {
+    padding: 0px;
+    display: block;
+    margin: auto;
+}
 
   }
