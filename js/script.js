@@ -41,7 +41,7 @@ axios
         });
         cardContainer.innerHTML = cards;
 
-        const pinElem = document.querySelectorAll(".pin");
+        
           const colElem = document.querySelectorAll(".col");
           
 
@@ -50,12 +50,18 @@ axios
   curCol.style.cursor = "pointer";
   curCol.style.transform = "rotate(8deg) scale(1.1)";
   curCol.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
-  pinElem.style.display = "none";
+  const pin = curCol.querySelector(".pin");
+  if(pin){
+    pin.style.display = "none";
+  }
         });
         curCol.addEventListener("mouseout", function(){
 curCol.style.transform = "rotate(0deg) scale(1.0)";
   curCol.style.boxShadow = "none";
-pinElem.style.display = "block";
+ const pin = curCol.querySelector(".pin");
+  if(pin){
+    pin.style.display = "block";
+  }
         });
 
 })
