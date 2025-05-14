@@ -40,22 +40,46 @@ axios
                     </div> </div>`
         });
         cardContainer.innerHTML = cards;
-    //  aggiungo l'evento che mostra l'overlay al click specifico sull'immagine della card
-        cardContainer.addEventListener("click", function(event) {
-            if(event.target.classList.contains("card-img")){
+
+        const pinElem = document.querySelectorAll(".pin");
+          const colElem = document.querySelectorAll(".col");
+          
+
+        colElem.forEach(curCol => {
+            curCol.addEventListener("mouseover", function(){
+  curCol.style.cursor = "grab";
+  curCol.style.transform = "rotate(8deg)";
+  curCol.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
+  pinElem.style.display = "none";
+        });
+        curCol.addEventListener("mouseout", function(){
+curCol.style.transform = "rotate(0deg)";
+  curCol.style.boxShadow = "none";
+pinElem.style.display = "block";
+        });
+
+})
+        
+
+
+
+
+        //  aggiungo l'evento che mostra l'overlay al click specifico sull'immagine della card
+        cardContainer.addEventListener("click", function (event) {
+            if (event.target.classList.contains("card-img")) {
                 overlayElem.style.display = "block";
                 overlayElem.innerHTML = `
                 <button class="close">Chiudi</button></div><img
             src="${event.target.src}" alt="" class="overlay-img container-small">
                 `;
                 const buttonElem = document.querySelector(".close");
-              buttonElem.addEventListener("click", function(){
+                buttonElem.addEventListener("click", function () {
                     overlayElem.style.display = "none";
                 })
             }
 
-
         })
-       
-       });
 
+
+
+    });
